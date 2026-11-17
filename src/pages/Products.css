@@ -1,0 +1,169 @@
+
+/* PRODUCTS PAGE */
+
+.products-page {
+  min-height: 100vh;
+  padding: 50px 40px;
+  background: #f7f7f7;
+}
+
+.products-page h1 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 36px;
+  color: #222;
+}
+
+/* SEARCH AND FILTER */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filters input,
+.filters select {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.filters input {
+  width: 350px;
+  max-width: 100%;
+}
+
+.filters select {
+  width: 220px;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.1);
+}
+
+/* PRODUCT GRID */
+
+.products-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+}
+
+/* LOADING AND ERROR MESSAGES */
+
+.message {
+  text-align: center;
+  margin-top: 100px;
+  color: #555;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .products-page {
+    padding: 40px 25px;
+  }
+
+  .products-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* SMALL TABLET */
+
+@media (max-width: 800px) {
+  .products-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .filters input {
+    width: 280px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+  .products-page {
+    padding: 30px 15px;
+  }
+
+  .products-page h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .products-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 35px 0;
+}
+
+.pagination button {
+  padding: 9px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #ff4d4d;
+  color: white;
+  border-color: #ff4d4d;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 550px) {
+  .pagination {
+    gap: 6px;
+  }
+
+  .pagination button {
+    padding: 8px 11px;
+  }
+}
